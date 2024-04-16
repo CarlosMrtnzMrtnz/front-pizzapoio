@@ -3,7 +3,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -35,7 +35,7 @@ jobs:
           echo "aws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> ~/.aws/config
           echo "region = us-east-1" >> ~/.aws/config
 
-      - name: aws s3 delete bucket archives
+      - name: aws s3 delete bucket archives x
         run: aws s3 rm s3://pizzapoio --recursive
 
       # - name: aws s3 upload archives
