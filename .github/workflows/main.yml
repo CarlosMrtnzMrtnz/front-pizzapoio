@@ -27,7 +27,7 @@ jobs:
       - name: List dist files
         run: ls && cd dist && ls
 
-      - name: Configure AWS CLI s
+      - name: Configure AWS CLI
         run: |
           mkdir -p ~/.aws
           echo "[default]" > ~/.aws/config
