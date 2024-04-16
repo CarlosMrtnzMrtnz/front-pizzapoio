@@ -1,0 +1,81 @@
+<main class="inicio">
+    <div class="d-flex justify-content-around my-3 Logo linea">
+        <h2>Pizzas</h2>
+    </div>
+    <section class="container pizzas">
+        <!------------------------------------------------ Pizzas -------------------------->
+        <section class="mt-4 ">
+            <div class="container mt-3">
+                <div class="row d-flex justify-content-lg-start justify-content-md-center justify-content-sm-center">
+                    @for (item of productosData(); track $index) {
+                        @if (item.tipo == "Pizza") {
+                            <app-productos class="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center"
+                            [rutaImagen]="item.imagen"
+                            [rutaNombre]="item.nombre"
+                            [rutaValor]="item.valor"
+                            [rutaIngredientes]="item.ingredientes"
+                            [rutaId]="item._id"
+                            [rutaProduct]="item"
+                            ></app-productos>
+                        }
+                    }
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+    <!-- ----------------------------------------------------------------------- Postres & Bebidas --------------------------------------------------------------------------- -->
+
+    <div class="d-flex justify-content-around m-3 Logo linea">
+        <h2>Postres</h2>
+    </div>
+    <section class="container">
+        <!------------------------------------------------ Postres -------------------------->
+        <section class="mt-4">
+            <div class="container mt-3">
+                <div class="row d-flex justify-content-lg-start justify-content-md-center justify-content-sm-center">
+                    @for (item of productosData(); track $index) {
+                        @if (item.tipo == "Postre") {
+                            <app-productos class="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center"
+                            [rutaImagen]="item.imagen"
+                            [rutaNombre]="item.nombre"
+                            [rutaValor]="item.valor"
+                            [rutaIngredientes]="item.ingredientes"
+                            [rutaId]="item._id"
+                            [rutaProduct]="item"
+                            ></app-productos>
+                        }
+                    }
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+    <div class="d-flex justify-content-around m-3 Logo linea">
+        <h2>Bebidas</h2>
+    </div>
+    <section class="container">
+        <!------------------------------------------------ Bebidas -------------------------->
+        <section class="mt-4">
+            <div class="container mt-3">
+                <div class="row d-flex justify-content-lg-start justify-content-md-center justify-content-sm-center">
+                    @for (item of productosData(); track $index) {
+                        @if (item.tipo == "Bebida") {
+                            <app-productos class="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center"
+                            [rutaImagen]="item.imagen"
+                            [rutaNombre]="item.nombre"
+                            [rutaValor]="item.valor"
+                            [rutaIngredientes]="item.ingredientes"
+                            [rutaId]="item._id"
+                            [rutaProduct]="item"
+                            ></app-productos>
+                        }
+                    }
+                </div>
+            </div>
+        </section>
+    </section>
+
+</main>

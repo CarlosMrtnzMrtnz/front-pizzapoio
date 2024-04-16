@@ -1,0 +1,114 @@
+<nav class="navbar barra navbar-expand-lg bg-body-tertiary sticky-top">
+    <div class="container-fluid d justify-content-between inicial">
+        <div class="ms-5 xx">
+            <h1 class="Logo Logox m-0 " type="button" routerLink="/">Pizza Poio</h1>
+        </div>
+        <div class="debajo">
+            <button class="btn menu" routerLink="/">Menu</button>
+            @if (idUsuarioPayload) {
+                <button class="btn menu"  routerLink="/sigueTuPedido"> Pedidos</button>
+                <button class="btn menu" (click)="clearSessionStorage()"><i class="fa-regular fa-user "></i> Logout</button>
+        }
+
+        @if (idUsuarioPayload == null || idUsuarioPayload == undefined) {
+            <button class="btn menu" data-bs-toggle="modal" data-bs-target="#exampleModal "><i class="fa-regular fa-user "></i> Iniciar Sesion</button>
+
+        }
+
+        </div>
+         <div>
+            @if (rollPayload == 'admin') {
+                <button class="btn btn" type="button" routerLink="/admin">
+                    <i class="fa-solid fa-paste text-white fs-1"></i>
+                </button>
+            }
+            <button class="btn btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                <i class="fa-solid fa-cart-shopping text-white fs-1"></i>
+            </button>
+         </div>
+    </div>
+</nav>
+<!-- ------------------------------------------------offcanvas---------------------------------------- -->
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="offcanvas-header title">
+        <h2 class="offcanvas-title Logo pedido  d-flex justify-content-center ms-5" id="offcanvasScrollingLabel">Realiza tu pedido!</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+
+        <div class="d-flex justify-content-center mt-2" *ngFor="let item of myCarts | async">
+            <div class="d-flex cajaProducto" >
+                <div class="d-grid align-content-center">
+                    <img class="imgProducto  m-2" [src]="item.imagen" alt="">
+                </div>
+                <div class="w-100">
+                    <h4 class="Texto fw-bold d-flex justify-content-center m-0 mt-1">{{item.nombre}}</h4>
+                    <h5 class="d-flex justify-content-center fw-bold Texto precio m-0 ">$ {{item.valor}}</h5>
+                </div>
+                <div class="me-2 d-grid align-content-center">
+                    <h4 class="Texto fw-bolder">{{item.cantidad}}</h4>
+                </div>
+            </div>
+            <div class="d-grid align-content-center ms-2 borrar" (click)="deleteProducto(item._id)" type="button">
+                <i class="fa-solid fa-trash-can"></i>
+            </div>
+            <h3 class="d-none">Total: {{totalProducto(item.valor, item.cantidad)}}</h3>
+        </div>
+        <div class="sticky-bottom bg-white">
+            <div class="Logo pedido mt-3 total ">
+                <h2>Total: {{totalCart()}}</h2>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="button" (click)="submitPedido()" class="btn pagar fw-bold fs-3">Realizar pedido</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!------------------------------------------------ Modal ---------------------------------------------->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex justify-content-center container">
+                    <h3 class="Loguito">Pizza Poio</h3>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <main class="">
+                    <div class="d-flex justify-content-center container ">
+                        <div class="d-flex justify-content-center caja1 ">
+                            <form class="d-flex justify-content-center flex-column " (keydown.enter)="ingresoUsuario()" >
+                                <div class="mb-5">
+                                    <div class="">
+                                        <label for="inputEmail3" class="Texto fw-bold mb-2">Correo Electronico</label>
+                                        <input type="email" class="form-control rounded-5 in px-5" [formControl]="inputCorreo" id="inputEmail3" required="">
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="" >
+                                        <label for="inputPassword3" class="Texto fw-bold mb-2">Contraseña</label>
+                                        <input type="password" class="form-control rounded-5 in px-5" [formControl]="inputClave" id="inputPassword3" required="">
+                                    </div>
+                                </div>
+
+                                <div class="mt-5 d-flex justify-content-center ">
+                                    <button (click)="ingresoUsuario()"  type="button" class="btn btn-primary Texto rounded-5 inx text-white fw-bold px-4">Ingresar</button>
+                                </div>
+
+                                <div class="mt-3 Texto registro d-flex justify-content-center">
+                                    <p class="fw-bold">¿No tienes cuenta? <a class="registro fw-bold text-decoration-none"  data-bs-dismiss="modal" aria-label="Close" routerLink="/registro" >Registrate</a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </main>
+
+            </div>
+
+        </div>
+    </div>
+</div>

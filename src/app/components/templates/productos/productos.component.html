@@ -1,0 +1,35 @@
+<!-- <div class="d-flex justify-content-center col-md-4 col-lg-6 mb-4" >
+    <div class="d-flex cajaProducto">
+        <div class="d-grid align-content-center"><img class="imgProducto  m-2" [src]="rutaImagen" alt=""></div>
+        <div class="w-100">
+            <h4 class="Logo d-flex justify-content-center m-0 mt-1">{{rutaNombre}}</h4>
+            @if (rutaIngredientes != "") {
+                <ul class="m-0">
+                    @for (item of rutaIngredientes; track $index) {
+                        <li class="Texto">{{item}}</li>
+                    }
+                </ul>
+            }
+            <h5 class="d-flex justify-content-center Logo precio m-0 ">$ {{rutaValor}}</h5>
+        </div>
+        <div class="d-grid align-content-center fw-bold fs-1 Logo me-2">+</div>
+    </div>
+</div> -->
+
+
+<div class="card m-2" style="width: 18rem;">
+    <img [src]="rutaImagen" class="card-img-top imgProducto" alt="...">
+    <div class="card-body ">
+      <h5 class="card-title d-flex justify-content-center Logo">{{rutaNombre}}</h5>
+      <!-- <p class="card-text Texto">{{rutaIngredientes}}</p> -->
+      @if (rutaIngredientes != "") {
+        <ul class="m-0">
+            @for (item2 of rutaIngredientes; track $index) {
+                <li class="Texto fw-semibold">{{item2}}</li>
+            }
+        </ul>
+    }
+      <h5 class="d-flex justify-content-center fw-bold precio">$ {{rutaValor}}</h5>
+      <a type="button" (click)="addTocart(rutaProduct)" class="btn agregar w-100">Agregar</a>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+:root {
+    --color-verde:#254441;
+    --color-naranja:#FF6F59;
+    --color-fondo:#D9D9D9;
+    --color-intro:#B2B09B;
+    --color-rojo:#EF3054;
+    }
+    @font-face{
+        font-family: 'Logo';
+        src: url('../src/assets/fonts/ProtestStrike-Regular.ttf');
+    }
+
+    @font-face{
+        font-family: 'Texto';
+        src: url('../src/assets/fonts/NotoSansJP-Light.ttf');
+    }
+
+    .Logo{
+        font-family: 'Logo';
+    }
+
+    .Texto{
+        font-family: 'Texto';
+    }

@@ -1,0 +1,27 @@
+.linea {
+    border-bottom: solid 1px;
+    background-color: var(--color-fondo);
+    color: var(--color-rojo);
+
+}
+.imgProducto {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 1rem;
+}
+.cajaProducto {
+    border-radius: 1rem;
+    width: 24rem;
+    height: 9rem;
+    background-color: var(--color-intro);
+}
+.precio {
+    color: var(--color-rojo);
+}
+.inicio {
+ background-image: url(https://png.pngtree.com/background/20210706/original/pngtree-hand-painted-background-pizza-seamless-vector-picture-image_134052.jpg);
+ object-fit: cover;
+
+}
+
+

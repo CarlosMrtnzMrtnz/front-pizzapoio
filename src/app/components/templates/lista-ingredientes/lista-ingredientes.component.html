@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-between align-items-center mb-3 caja rounded-2">
+    <img [src]="rutaImagen"
+    alt="" class="rounded-2 img-producto me-3">
+    <div class="d-flex align-items-center">
+        <div class="d-flex justify-content-start Texto">
+            <div class="text-black mx-4"><h4>{{rutaNombre}}</h4></div>
+            <div class="text-black mx-4"><h4 class="m-0">{{rutaCantidad}} Kg</h4></div>
+            <div class="text-black mx-4"><h4 class="m-0">$ {{rutaValor}}</h4></div>
+        </div>
+    </div>
+    <div class="d-flex ">
+        <button type="button" class="btn color-btn text-dark fw-bold rounded-pill w-100 px-3">
+            <i class="fa-solid fa-pencil"></i>
+        </button>
+        <button type="button" (click)="eliminarIngrediente(rutaId)" class="btn color-btn text-danger fw-bold rounded-pill w-100 px-3">
+            <i class="fa-solid fa-trash"></i>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+.body {
+    background-color: var(--color-verde);
+}
+.fondo {
+    background-color: var(--color-verde);
+
+
+}
+.titulo {
+    color:#FF6F59;
+    font-size: 8rem;
+}
+.caja1 {
+    background-color: var(--color-fondo);
+    width: 40rem;
+    height: 30.8rem;
+    margin-bottom: 10rem;
+    border-radius: 25px;
+}
+.registro {
+    color: var(--color-rojo);
+}
+ .in {
+    background-color: var(--color-intro);
+
+ }
