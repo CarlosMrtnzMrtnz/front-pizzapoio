@@ -38,5 +38,5 @@ jobs:
       - name: aws s3 delete bucket archives x
         run: aws s3 rm s3://pizzapoio --recursive
 
-      # - name: aws s3 upload archives
-      #   run: aws s3 cp ./dist/carlos-pipeline/browser s3://pizzapoio --recursive
+      - name: aws s3 upload archives
+        run: aws s3 cp ./dist/pizza-poio/browser s3://pizzapoio --recursive
