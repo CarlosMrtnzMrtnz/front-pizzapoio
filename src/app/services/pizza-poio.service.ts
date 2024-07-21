@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class PizzaPoioService {
 private http = inject(HttpClient)
-private urlApi: string  ='http://44.211.138.209:4001/api'
+private urlApi: string  ='http://44.211.138.209:4000/api'
 
 constructor() { }
 
